@@ -22,10 +22,10 @@ const App = () => {
       black:"#212529",
       helper:"#8490ff",
 
-      bg:"F6F8FA",
-      fotter_bg:"#0a1435",
+      bg:"#F6F8FA",
+      footer_bg:"#0a1435",
       btn:"rgb(98 84 243)",
-      border:"rgb(98 84 243)",
+      border: "rgba(98, 84, 243, 0.5)",
       hr:"#ffffff",
       gradient:
       "linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%)",
