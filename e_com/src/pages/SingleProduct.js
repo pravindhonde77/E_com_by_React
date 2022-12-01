@@ -8,6 +8,8 @@ import { Container } from "../styles/Container";
 import FormatPrice from "../Helper/FormatPrice";
 import { TbReplace, TbTruckDelivery } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
+import Star from "../components/Star";
+import AddToCart from "../components/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products"
 
@@ -42,15 +44,17 @@ const SingleProduct = () => {
       <PageNavigation title={name} />
       <Container className="container">
         <div className="grid grid-two-column">
+
           {/* product image */}
           <div className="product_Images">
             <Myimage imgs={image} />
           </div>
+
           {/* product data */}
           <div className="product-data">
             <h2>{name}</h2>
-            <p>{stars}</p>
-            <p>{reviews} reviews</p>
+            <Star stars={stars} reviews={reviews}/>
+          
             <p className="product-data-price">
               MPR:
               <del>
@@ -90,15 +94,14 @@ const SingleProduct = () => {
               Available:
               <span>{stock>0 ?"In stock":"Not Available"}</span>
               </p>
-              <p>
-                ID:<span>{id}</span>
-              </p>
+             
               <p>
                 Brand:<span>{company}</span>
               </p>
             
              </div>
-
+            <hr />
+            {stock >0 && <AddToCart product={singleProduct}/>}
           </div>
         </div>
       </Container>
@@ -111,6 +114,10 @@ const SingleProduct = () => {
 const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
+  }
+  .product_images{
+    display:flex;
+    align-items:center;
   }
   .product-data {
     display: flex;
