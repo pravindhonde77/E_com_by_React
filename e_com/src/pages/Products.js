@@ -4,7 +4,10 @@ import FilterSection from "../components/FilterSection";
 import ProductList from "../components/ProductList";
 import Sort from "../components/Sort";
 
+
 const Products = () => {
+
+
   return <Wrapper>
     <div className="container grid grid-filter-column">
       <div>
