@@ -4,16 +4,16 @@ import Product from './Product';
 
 const GridView = ({ products }) => {
     return (
-        <Wrapper>
-            <div className="section">
-                <div className="container grid-three-column">
+        <Wrapper className="section">
+            
+                <div className="container grid grid-three-column">
                     {
                         products.map((ele, id) => {
                             return <Product key={ele.id}{...ele} />
                         })
                     }
                 </div>
-            </div>
+           
 
         </Wrapper>
     )
