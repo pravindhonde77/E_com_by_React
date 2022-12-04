@@ -70,23 +70,29 @@ const filterReducer = (state, action) => {
               filters:{
                 ...state.filters,
                 [name]:value,
-              }
+              },
             }
 
             case "FILTER_PRODUCTS":
                 let {all_products}=state;
                 let tempFilterProduct=[...all_products]
                 
-                const{text,category}=state.filters;
+                const{text,category,company}=state.filters;
+
                 if(text){
                     tempFilterProduct=tempFilterProduct.filter((ele)=>{
                       return ele.name.toLowerCase().includes(text);
                     })
                 }
-                if(category){
+                if(category!=="all"){
                     tempFilterProduct=tempFilterProduct.filter((ele)=>{
                       return ele.category===category;
-                      
+                    })
+                }
+
+                if(company!=="all"){
+                    tempFilterProduct=tempFilterProduct.filter((ele)=>{
+                      return ele.company.toLowerCase()===company.toLowerCase();
                     })
                 }
                 
