@@ -11,6 +11,8 @@ const initialState = {
 
    filters: {
       text: "",
+      category: "all",
+      company: "all",
    }
 }
 
@@ -48,24 +50,24 @@ export const FilterContextProvider = ({ children }) => {
       let name = event.target.name;
       let value = event.target.value
 
-      return dispatch({type:"UPDATE_FILTERS_VALUE",payload:{name,value}})
+      return dispatch({ type: "UPDATE_FILTERS_VALUE", payload: { name, value } })
    }
 
    //to sort the product
    useEffect(() => {
-      dispatch({type:"FILTER_PRODUCTS"})
+      dispatch({ type: "FILTER_PRODUCTS" })
       dispatch({ type: "SORTING_PRODUCTS" })
-   }, [products, state.sorting_value,state.filters])
+   }, [products, state.sorting_value, state.filters])
 
 
    return (
-      <FilterContext.Provider value={{ 
+      <FilterContext.Provider value={{
          ...state,
-          setGridView,
-           setListView, 
-           sorting,
-           updateFilterValue,
-            }}>
+         setGridView,
+         setListView,
+         sorting,
+         updateFilterValue,
+      }}>
          {children}
 
       </FilterContext.Provider>

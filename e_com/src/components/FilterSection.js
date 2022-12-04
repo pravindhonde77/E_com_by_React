@@ -4,9 +4,22 @@ import styled from "styled-components"
 
 const FilterSection = () => {
   const {
-    filters:{text},
+    filters:{text,category},
+    all_products,
     updateFilterValue,
   }=useFilterContext()
+
+  //to get the unique data of each fields
+  const getUniqueData=(data,property)=>{
+        let newVal=data.map((ele)=>{
+          return ele[property];
+        })
+        return (newVal=["All",...new Set(newVal) ])
+       } // console.log(newVal);
+
+
+  //We need unique data
+  const categoryOnlyData=getUniqueData(all_products,"category")
   return (
     <Wrapper>
       <div className="filter-section">
@@ -16,8 +29,25 @@ const FilterSection = () => {
           name='text'
           value={text}
           onChange={updateFilterValue}
+          placeholder="SEARCH"
           />
         </form>
+      </div>
+
+
+      <div className="filter-category">
+        <h3>Category</h3>
+        <div>{categoryOnlyData.map((ele,index)=>{
+          return (<button 
+          key={index}
+          type="button"
+          name='category'
+          value={ele}
+          onClick={updateFilterValue}>
+            {ele}
+          </button>
+          )
+        })}</div>
       </div>
     </Wrapper>
   )
