@@ -67,12 +67,12 @@ li {
 }
 ${"" /* resuable code section  */}
 .container {
-  max-width: 120rem;
+  max-width: 100rem;
   margin: 0 auto;
 }
 .grid {
   display: grid;
-  gap: 9rem;
+  gap: 6rem;
 }
 .grid-two-column {
   grid-template-columns: repeat(2, 1fr);
