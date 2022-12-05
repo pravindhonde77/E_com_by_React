@@ -21,7 +21,7 @@ const FilterSection = () => {
   //We need to have the indiviual data of each in an array format
   const categoryOnlyData=getUniqueData(all_products,"category")
   const companyData=getUniqueData(all_products,"company")
-  console.log(companyData)
+  const colorsData=getUniqueData(all_products,"colors")
   return (
     <Wrapper>
       <div className="filter-search">
