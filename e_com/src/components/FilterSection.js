@@ -14,19 +14,21 @@ const FilterSection = () => {
         let newVal=data.map((ele)=>{
           return ele[property];
         })
-        return (newVal=["All",...new Set(newVal) ])
+        return (newVal=["all",...new Set(newVal) ])
        } // console.log(newVal);
 
 
-  //We need unique data
+  //We need to have the indiviual data of each in an array format
   const categoryOnlyData=getUniqueData(all_products,"category")
+  const companyData=getUniqueData(all_products,"company")
+  const colorsData=getUniqueData(all_products,"colors")
   return (
     <Wrapper>
-      <div className="filter-section">
+      <div className="filter-search">
         <form onSubmit={(e)=>e.preventDefault()}>
           <input 
           type="text"
-          name='text'
+          name="text"
           value={text}
           onChange={updateFilterValue}
           placeholder="SEARCH"
@@ -41,13 +43,36 @@ const FilterSection = () => {
           return (<button 
           key={index}
           type="button"
-          name='category'
+          name="category"
           value={ele}
           onClick={updateFilterValue}>
             {ele}
           </button>
           )
         })}</div>
+      </div>
+
+      <div className="filter-company">
+        <h3>Company</h3>
+        <form action="#">
+          <select
+           name="company"
+            id="company" 
+            className='filter-company--select' 
+            onClick={updateFilterValue}>
+             {
+              companyData.map((ele,index)=>{
+                return(
+                  <option key={index} value={ele} name="company">
+                    {ele}
+                   </option>
+
+                )
+                   
+              })
+             }
+          </select>
+        </form>
       </div>
     </Wrapper>
   )
