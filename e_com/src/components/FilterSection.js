@@ -4,34 +4,41 @@ import styled from "styled-components"
 
 const FilterSection = () => {
   const {
-    filters:{text,category},
+    filters: { text, category },
     all_products,
     updateFilterValue,
-  }=useFilterContext()
+  } = useFilterContext()
 
   //to get the unique data of each fields
-  const getUniqueData=(data,property)=>{
-        let newVal=data.map((ele)=>{
-          return ele[property];
-        })
-        return (newVal=["all",...new Set(newVal) ])
-       } // console.log(newVal);
+  const getUniqueData = (data, attribute) => {
+    let newVal = data.map((ele) => {
+      return ele[attribute];
+    })
+
+    if (attribute === "colors") {
+      //unique an dnon duplicate value from an array
+      // return (newVal = ["All", ...new Set([].concate(...newVal))])
+      newVal = newVal.flat()
+    }
+    return (newVal = ["all", ...new Set(newVal)])
+  }
 
 
   //We need to have the indiviual data of each in an array format
-  const categoryOnlyData=getUniqueData(all_products,"category")
-  const companyData=getUniqueData(all_products,"company")
-  const colorsData=getUniqueData(all_products,"colors")
+  const categoryOnlyData = getUniqueData(all_products, "category")
+  const companyData = getUniqueData(all_products, "company")
+  const colorsData = getUniqueData(all_products, "colors")
+  // console.log(colorsData);
   return (
     <Wrapper>
       <div className="filter-search">
-        <form onSubmit={(e)=>e.preventDefault()}>
-          <input 
-          type="text"
-          name="text"
-          value={text}
-          onChange={updateFilterValue}
-          placeholder="SEARCH"
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="text"
+            name="text"
+            value={text}
+            onChange={updateFilterValue}
+            placeholder="SEARCH"
           />
         </form>
       </div>
@@ -39,13 +46,13 @@ const FilterSection = () => {
 
       <div className="filter-category">
         <h3>Category</h3>
-        <div>{categoryOnlyData.map((ele,index)=>{
-          return (<button 
-          key={index}
-          type="button"
-          name="category"
-          value={ele}
-          onClick={updateFilterValue}>
+        <div>{categoryOnlyData.map((ele, index) => {
+          return (<button
+            key={index}
+            type="button"
+            name="category"
+            value={ele}
+            onClick={updateFilterValue}>
             {ele}
           </button>
           )
@@ -56,21 +63,21 @@ const FilterSection = () => {
         <h3>Company</h3>
         <form action="#">
           <select
-           name="company"
-            id="company" 
-            className='filter-company--select' 
+            name="company"
+            id="company"
+            className='filter-company--select'
             onClick={updateFilterValue}>
-             {
-              companyData.map((ele,index)=>{
-                return(
+            {
+              companyData.map((ele, index) => {
+                return (
                   <option key={index} value={ele} name="company">
                     {ele}
-                   </option>
+                  </option>
 
                 )
-                   
+
               })
-             }
+            }
           </select>
         </form>
       </div>
