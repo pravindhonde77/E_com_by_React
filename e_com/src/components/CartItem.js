@@ -5,7 +5,7 @@ import FormatPrice from '../Helper/FormatPrice'
 import CartAmountToggle from './CartAmountToggle'
 
 const CartItem = ({ id, name, image, color, price, amount }) => {
-    const{removeItem}=useCartContext()
+    const{removeItem,setDecrment,setIncrement}=useCartContext()
     const setDecrease = () => {
         // amount > 1 ? setAmount(amount - 1) : setAmount(1)
     }
@@ -38,8 +38,8 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
 
             <CartAmountToggle
                 amount={amount}
-                setDecrease={setDecrease}
-                setIncrease={setIncrease} />
+                setDecrease={()=>setDecrment(id)}
+                setIncrease={()=>setIncrement(id)} />
 
             {/* SubTotal */}
             <div className="cart-hide">
