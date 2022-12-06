@@ -6,13 +6,13 @@ import CartAmountToggle from './CartAmountToggle'
 
 const CartItem = ({ id, name, image, color, price, amount }) => {
     const{removeItem,setDecrment,setIncrement}=useCartContext()
-    const setDecrease = () => {
-        // amount > 1 ? setAmount(amount - 1) : setAmount(1)
-    }
+    // const setDecrease = () => {
+    //     // amount > 1 ? setAmount(amount - 1) : setAmount(1)
+    // }
 
-    const setIncrease = () => {
-        // amount < stock ? setAmount(amount + 1) : setAmount(stock)
-    }
+    // const setIncrease = () => {
+    //     // amount < stock ? setAmount(amount + 1) : setAmount(stock)
+    // }
     return (
         <div className='cart_heading grid grid-five-column'>
             <div className="cart-image--name">
