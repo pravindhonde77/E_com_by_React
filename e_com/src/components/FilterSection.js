@@ -140,6 +140,7 @@ const FilterSection = () => {
           type="range"
           name='price'
           min={minPrice}
+          
           max={maxPrice}
           value={price}
           onChange={updateFilterValue}
