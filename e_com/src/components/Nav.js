@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { useCartContext } from "../contex/cart_context";
-
+import { MdDarkMode} from "react-icons/md";
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
   const{total_item}=useCartContext()
@@ -55,6 +55,10 @@ const Nav = () => {
       .cart-trolley {
         position: relative;
         font-size: 3.2rem;
+      }
+
+      .theme-icon{
+        padding:4rem
       }
 
       .cart-total--item {
@@ -199,6 +203,13 @@ const Nav = () => {
               Contact
             </NavLink>
           </li>
+          <li>
+         <div style={{fontSize:18}}>
+          THEME
+         </div>
+            
+          </li>
+     
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
