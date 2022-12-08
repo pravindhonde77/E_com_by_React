@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
-import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import {   FaYoutube } from "react-icons/fa";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -42,10 +43,12 @@ const Footer = () => {
               <h3>Follow Us</h3>
               <div className="footer-social--icons">
                 <div>
-                  <FaDiscord className="icons" />
+                  <a href="https://github.com/pravindhonde77">  <AiFillGithub className="icons" /></a>
+                
                 </div>
                 <div>
-                  <FaInstagram className="icons" />
+                  <a href="https://www.linkedin.com/in/pravin-dhonde-17aa5b22a/"> <AiFillLinkedin className="icons" /></a>
+                 
                 </div>
                 <div>
                   <a
@@ -58,7 +61,7 @@ const Footer = () => {
             </div>
             <div className="footer-contact">
               <h3>Call Us</h3>
-              <h3>+91 12345678978</h3>
+              <h3>+91 8796618535</h3>
             </div>
           </div>
 
@@ -66,7 +69,7 @@ const Footer = () => {
             <hr />
             <div className="container grid grid-two-column ">
               <p>
-                @{new Date().getFullYear()} ThapaTechnical. All Rights Reserved
+                @{new Date().getFullYear()} E-commerce. All Rights Reserved
               </p>
               <div>
                 <p>PRIVACY POLICY</p>

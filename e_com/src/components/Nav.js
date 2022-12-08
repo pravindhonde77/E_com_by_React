@@ -203,13 +203,7 @@ const Nav = () => {
               Contact
             </NavLink>
           </li>
-          <li>
-         <div style={{fontSize:18}}>
-          THEME
-         </div>
-            
-          </li>
-     
+         
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
