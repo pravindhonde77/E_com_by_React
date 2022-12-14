@@ -9,31 +9,31 @@ const Trusted = () => {
           {/* my 1st img  */}
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ-pF1U2Xa9B0cgidM6cTphRrJl9XkIM06vA&usqp=CAU"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvVhVmDLa7sAWi3y_fPNMX2TUV6VvroIKU151tRELOxe9v38aSdlCxUqXjirXKEzgkrG0&usqp=CAU"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlvppZRyp_W7FITDnC6OFm0al9ikVstpkScUIrJMAQG8J6-iNnMrOxi86TOGygRi_YDRA&usqp=CAU"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5aksJnZhqmB3BBFNbFeLM-56KUx2aygDVFQ&usqp=CAU"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSobtsdi-YDBVMLHUqWfKRiKdvm8tr45d2eSQ&usqp=CAU"
               alt="trusted-brands"
             />
           </div>

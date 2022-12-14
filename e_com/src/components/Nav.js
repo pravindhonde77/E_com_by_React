@@ -1,13 +1,25 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { useCartContext } from "../contex/cart_context";
-import { MdDarkMode} from "react-icons/md";
+import { Button } from "../styles/Button";
+import { useDispatch, useSelector } from "react-redux";
+import {logOut} from "../redux/Auth/action"
+
+// import { MdDarkMode} from "react-icons/md";
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
   const{total_item}=useCartContext()
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
+
+  const isAuth = useSelector((s)=> s.AuthReducer.isAuth);
+  const handleClick=()=>{
+    dispatch(logOut)
+    navigate("/")
+  }
 
   const Nav = styled.nav`
     .navbar-lists {
@@ -201,6 +213,29 @@ const Nav = () => {
               className="navbar-link "
               onClick={() => setMenuIcon(false)}>
               Contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+            to="/signup"
+            className="navbar-link "
+            >
+              <Button style={{padding:5,borderRadius:"10px"}}>SignUp</Button>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+            to="/login"
+            className="navbar-link "
+            >{
+              isAuth ?
+              ( <Button style={{padding:5,borderRadius:"10px"}} onClick={handleClick}>Logout</Button>)
+              :
+               <Button style={{padding:5,borderRadius:"10px"}}>Login</Button>
+            }
+              
+             
+             
             </NavLink>
           </li>
          

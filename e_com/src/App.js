@@ -11,6 +11,10 @@ import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import { PrivateRoutes } from "./components/PrivateROutes";
+
 
 
 const App = () => {
@@ -52,7 +56,10 @@ const App = () => {
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={ <PrivateRoutes><Cart/></PrivateRoutes>} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+        
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer/>

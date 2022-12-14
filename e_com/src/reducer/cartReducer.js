@@ -140,14 +140,15 @@ const cartReducer = (state, action) => {
 
 
     if (action.type === "CART_ITEM_PRICE_TOTAL") {
-        let { total_item, total_price } = state.cart.reduce((accum, ele) => {
+        let { total_item, total_price } = state.cart.reduce((acc, ele) => {
 
             let { price, amount } = ele;
 
-            accum.total_item +=  amount;
-            accum.total_price += price * amount;
+            acc.total_item +=  amount;
+            acc.total_price += price * amount;
+            console.log(acc)
             
-            return accum;
+            return acc;
 
         }, 
         {
